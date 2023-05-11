@@ -1,0 +1,46 @@
+<div class="MainContainer">
+    <div class="NoteTaker">
+  
+      <div class="FirstView" >
+  
+        <form [formGroup]="NotesinData">
+          <input type="text" placeholder="Title" class="FirstViewText" formControlName="title">
+        </form>
+        <img src="../../../assets/push_pin.svg" alt="Pin" class="PinIcon">
+  
+      </div>
+  
+      <div class="SecndView">
+  
+        <form [formGroup]="NotesinData" class="FormWidthControll">
+          <input type="text" placeholder="Take a note..." class="SecondViewText" formControlName="description">
+        </form>
+  
+      </div>
+  
+      <div class="BottomIcons" >
+  
+        <!-- <div class="LeftIcons">
+          <img src="../../../assets/notifications_.svg" alt="Remind me" class="DownIcons">
+          <img src="../../../assets/person_add.svg" alt="Collaborator" class="DownIcons">
+          <img src="../../../assets/palette.svg" alt="Background options" class="DownIcons">
+          <img src="../../../assets/image.svg" alt="Add image" class="DownIcons">
+          <img src="../../../assets/archive_.svg" alt="Archive" class="DownIcons">
+          <img src="../../../assets/more_vert.svg" alt="More" class="DownIcons">
+          <img src="../../../assets/undo.svg" alt="Undo" class="DownIcons">
+          <img src="../../../assets/redo.svg" alt="Redo" class="DownIcons">
+        </div> -->
+  
+        <div class="IconsSpaceWidth">
+            <app-notesicon></app-notesicon>
+        </div>
+        
+        <div class="CloseButtonArea">
+          <button mat-flat-button >Close</button>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>

@@ -24,6 +24,12 @@ import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
+import { CreatenoteComponent } from './components/createnote/createnote.component';
+import { GetallnoteComponent } from './components/getallnote/getallnote.component';
+import { NotesiconComponent } from './components/notesicon/notesicon.component';
+import { ArchivenotesComponent } from './components/archivenotes/archivenotes.component';
+import { TrashnotesComponent } from './components/trashnotes/trashnotes.component';
+import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +41,12 @@ import {MatNativeDateModule} from '@angular/material/core';
     TakenotethreeComponent,
     HeaderComponent,
     DashboardComponent,
+    CreatenoteComponent,
+    GetallnoteComponent,
+    NotesiconComponent,
+    ArchivenotesComponent,
+    TrashnotesComponent,
+    DisplaynotesComponent,
        
   ],
   imports: [

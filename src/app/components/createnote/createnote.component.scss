@@ -1,0 +1,80 @@
+.MainContainer
+{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+}
+
+.FirstViewIcons
+{
+    height: 25px;
+    margin: 0px auto;
+}
+.NoteTaker
+{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 600px;
+    border: 2px solid rgb(236, 238, 240);
+    border-radius: 8px;
+    padding: 0% 1%;
+}
+
+.FormWidthControll
+{
+    width: 100%;
+}
+
+.FirstViewText
+{
+    width: 100%;
+    height: 35px;
+    margin: 5px 0px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+.OnlyInFirstview
+{
+    display: flex;
+    width: 25%;
+}
+.SecondViewText
+{
+    width: 100%;
+    height: 35px;
+    margin: 5px 0px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+.SecndView,.FirstView
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.PinIcon
+{
+    height: 27px;
+}
+
+.BottomIcons
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0px;
+}
+
+.IconsSpaceWidth
+{
+    width: 55%;
+}
+
+.DownIcons
+{
+    height: 25px;
+}

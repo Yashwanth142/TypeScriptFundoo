@@ -1,8 +1,8 @@
 <div class="signupcontainer">
     <form [formGroup]="signupForm" >
     <div class="firstcontainer">
-        <div class="google1">Google</div>
-        <div class="createnew">Create your Google Account</div>
+        <div class="google1">Fundoo</div>
+        <div class="createnew">Create your Fundoo Account</div>
   
         <div class="inputbox1">
           <div class="inputfield1">
@@ -26,6 +26,7 @@
     <mat-form-field appearance="outline" class="email">
         <mat-label >Email</mat-label>
         <input matInput placeholder="Email" formControlName="email">
+        <mat-hint>You can use letters, numbers & periods</mat-hint>
         <mat-error>Enter vaild Email</mat-error>
     </mat-form-field>
    </div> 
@@ -46,7 +47,7 @@
                 <mat-error>Enter vaild Confirmpassword</mat-error>
             </mat-form-field>
           </div>
-  </div> 
+  </div> <mat-hint class="hint">Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
   
   <div class="signinstead" >
             <div class="abc" routerLink="/login">Sign in instead </div>
