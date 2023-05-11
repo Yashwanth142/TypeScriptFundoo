@@ -1,0 +1,68 @@
+<div class="signupcontainer">
+    <form [formGroup]="signupForm" >
+    <div class="firstcontainer">
+        <div class="google1">Google</div>
+        <div class="createnew">Create your Google Account</div>
+  
+        <div class="inputbox1">
+          <div class="inputfield1">
+            <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First Name" formControlName="firstName">
+                <mat-error>Enter vaild Firstname</mat-error>
+            </mat-form-field>
+        </div>
+  
+        <div class="inputfield2">
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name" formControlName="lastName">
+                <mat-error>Enter vaild Lastname</mat-error>
+            </mat-form-field>
+        </div>
+      </div> 
+  
+   <div class="inputfield3">       
+    <mat-form-field appearance="outline" class="email">
+        <mat-label >Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error>Enter vaild Email</mat-error>
+    </mat-form-field>
+   </div> 
+  
+  <div class="inputbox2">
+          <div class="inputfield4">
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" formControlName="password">
+                <mat-error>Enter vaild Password</mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="inputfield5">
+            <mat-form-field appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput placeholder="Confirm Password" formControlName="confirmPassword">
+                <mat-error>Enter vaild Confirmpassword</mat-error>
+            </mat-form-field>
+          </div>
+  </div> 
+  
+  <div class="signinstead" >
+            <div class="abc" routerLink="/login">Sign in instead </div>
+       
+            <div routerLink="/login">
+                <button mat-raised-button class="clickbutton" color="primary"  (click)="onSubmit()">Next</button>
+            </div>
+      </div>
+  
+    </div>
+</form>
+    <div class="secondcontainer">
+          <div>
+          <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" height="244" width="244" alt="Google" />
+          </div>
+          <p>One account. All of Google working for you.</p>
+    </div> 
+
+  </div>

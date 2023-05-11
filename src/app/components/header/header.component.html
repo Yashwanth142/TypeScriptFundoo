@@ -1,0 +1,54 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="example-toolbar">
+      <div class="ToolBarMain">
+        <div class="ToolBarLeft">
+          <button mat-icon-button (click)="snav.toggle()" class="Burger"><mat-icon>menu</mat-icon></button>
+          <div class="MenuLogo">
+            <img src="../../../assets/logo1.png" alt="Logo" class="Logo">
+            <h1 class="HomeTitle">Fundoo</h1>
+          </div>
+  
+          <div class="SearchBar">
+            <!-- <button mat-icon-button><mat-icon>search</mat-icon></button> -->
+            <img src="../../../assets/search.svg" alt="Searchi" class="MainIcons SearchIcon" >
+            <input type="text" placeholder="Search" class="SearchArea" >
+          </div>
+        </div>
+  
+        <div class="ToolBarRight">
+          <div class="RightIcons">
+            <div class="InRight-Left">
+              <img src="../../../assets/refresh_.svg" alt="Refresh" class="MainIcons ToolbarSpaces">
+              <img src="../../../assets/view_.svg" alt="List View" class="MainIcons ToolbarSpaces">
+              <img src="../../../assets/settings_.svg" alt="Settings" class="MainIcons ToolbarSpaces">
+            </div>
+  
+            <div class="InRight-Right">
+              <img src="../../../assets/apps_.svg" alt="Apps" class="MainIcons ToolbarSpaces">
+              <!-- <button mat-icon-button><mat-icon>apps</mat-icon></button> -->
+              <img src="../../../assets/account_.svg" alt="Account" class="MainIcons" routerLink="/login">
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+        fixedTopGap="56">
+        <mat-nav-list class="MainListBody">
+          <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
+  
+          <mat-list-item class="NavItems"><div class="NavItemsContent"><img src="../../../assets/lightbulb_.svg" alt="Notes" class="MainIcons"><p>Notes</p></div></mat-list-item>
+          <mat-list-item class="NavItems"><div class="NavItemsContent"><img src="../../../assets/notifications_.svg" alt="Remianders" class="MainIcons"><p>Remianders</p></div></mat-list-item>
+          <mat-list-item class="NavItems"><div class="NavItemsContent"><img src="../../../assets/archive_.svg" alt="Archive" class="MainIcons"><p>Archive</p></div></mat-list-item>
+          <mat-list-item class="NavItems"><div class="NavItemsContent"><img src="../../../assets/delete_.svg" alt="Trash" class="MainIcons"><p>Trash</p></div></mat-list-item>
+  
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>

@@ -1,0 +1,31 @@
+<div class='signin'>
+    <form [formGroup]="loginForm" >
+    <div class='google'>Google</div>
+    <div class='sin'>Sign in</div>
+    <div class='useg'>Use your Google Account</div>
+
+    <div class='email1'>
+        <mat-form-field appearance="outline" class="field1">
+            <mat-label >Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-error>Enter vaild data</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class='password'>
+        <mat-form-field appearance="outline" class="field2">
+            <mat-label >Password</mat-label>
+            <input matInput placeholder="Password" formControlName="password">
+            <mat-error>Enter vaild data</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class='need'>Not your computer? Use Guest mode to sign in privately.</div>
+    <div class='learn'>Learn more</div>
+    <div class='next' >
+      <div routerLink="/signup"> Create account</div>
+       
+      <button mat-raised-button class="clickbutton" color="primary" (click)="reply()">Next</button>
+    </div>
+    </form>
+</div>
