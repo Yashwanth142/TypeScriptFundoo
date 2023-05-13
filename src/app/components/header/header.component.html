@@ -39,16 +39,17 @@
         <mat-nav-list class="MainListBody">
           <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
   
-          <mat-list-item class="NavItems"><div class="NavItemsContent"><img src="../../../assets/lightbulb_.svg" alt="Notes" class="MainIcons"><p>Notes</p></div></mat-list-item>
-          <mat-list-item class="NavItems"><div class="NavItemsContent"><img src="../../../assets/notifications_.svg" alt="Remianders" class="MainIcons"><p>Remianders</p></div></mat-list-item>
-          <mat-list-item class="NavItems"><div class="NavItemsContent"><img src="../../../assets/archive_.svg" alt="Archive" class="MainIcons"><p>Archive</p></div></mat-list-item>
-          <mat-list-item class="NavItems"><div class="NavItemsContent"><img src="../../../assets/delete_.svg" alt="Trash" class="MainIcons"><p>Trash</p></div></mat-list-item>
+          <mat-list-item class="NavItems" routerLink="/dashboard/notes"><div class="NavItemsContent"><img src="../../../assets/lightbulb_.svg" alt="Notes" class="MainIcons"><p>Notes</p></div></mat-list-item>
+          <mat-list-item class="NavItems" ><div class="NavItemsContent"><img src="../../../assets/notifications_.svg" alt="Remianders" class="MainIcons"><p>Remianders</p></div></mat-list-item>
+          <mat-list-item class="NavItems" routerLink="/dashboard/archive"><div class="NavItemsContent"><img src="../../../assets/archive_.svg" alt="Archive" class="MainIcons"><p>Archive</p></div></mat-list-item>
+          <mat-list-item class="NavItems" routerLink="/dashboard/trash"><div class="NavItemsContent"><img src="../../../assets/delete_.svg" alt="Trash" class="MainIcons"><p>Trash</p></div></mat-list-item>
   
         </mat-nav-list>
       </mat-sidenav>
   
       <mat-sidenav-content>
         <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+        <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>

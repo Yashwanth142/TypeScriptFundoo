@@ -10,9 +10,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { TakenoteoneComponent } from './components/takenoteone/takenoteone.component';
-import { TakenotetwoComponent } from './components/takenotetwo/takenotetwo.component';
-import { TakenotethreeComponent } from './components/takenotethree/takenotethree.component';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
@@ -36,9 +33,6 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
     AppComponent,
     SignupComponent,
     LoginComponent,
-    TakenoteoneComponent,
-    TakenotetwoComponent,
-    TakenotethreeComponent,
     HeaderComponent,
     DashboardComponent,
     CreatenoteComponent,

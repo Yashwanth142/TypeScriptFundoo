@@ -8,7 +8,11 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class UserService {
   bUrl:string=environment.baseUrl
-  constructor(private httpservice:HttpService) { }
+  token:any;
+  
+  constructor(private httpservice:HttpService) { 
+    this.token=localStorage.getItem("LoginId");
+  }
 
   signup(data:{}){
     let header={
@@ -18,7 +22,7 @@ export class UserService {
     }
     return this.httpservice.postMethod(this.bUrl+'users/',data,false,header)
   }
-  login(data:{})
+  login(data:any)
   {
     let header = {
       headers: new HttpHeaders({
@@ -28,4 +32,6 @@ export class UserService {
 
     return this.httpservice.postMethod(this.bUrl+'users/login', data, false, header);
   }
+
+ 
 }

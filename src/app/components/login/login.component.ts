@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userService/user-service.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { UserService } from 'src/app/services/userService/user-service.service';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar, private userService:UserService) { }
+  constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar, private userService:UserService,private router:Router) { }
 
   ngOnInit():void {
     this.loginForm = this.formBuilder.group({
@@ -32,8 +33,10 @@ export class LoginComponent implements OnInit {
       }
 
     this.userService.login(data).subscribe(
-        (response) => {
+        (response:any) => {
           console.log("Login successful", response);
+          localStorage.setItem("LoginId",response.data)
+          this.router.navigateByUrl('/dashboard/notes')
           this._snackBar.open("Login successful", "ok", { duration: 3000 });
         },
         (error) => {

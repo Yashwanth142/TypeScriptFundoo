@@ -3,11 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { GetallnoteComponent } from './components/getallnote/getallnote.component';
+import { ArchivenotesComponent } from './components/archivenotes/archivenotes.component';
+import { TrashnotesComponent } from './components/trashnotes/trashnotes.component';
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
-  {path:'dashboard',component:DashboardComponent}
+  {path:'dashboard',component:DashboardComponent,
+    children:[
+      {path:'notes',component:GetallnoteComponent},
+      {path:'archive',component:ArchivenotesComponent},
+      {path:'trash',component:TrashnotesComponent}
+    ]
+}
 ];
 
 @NgModule({
