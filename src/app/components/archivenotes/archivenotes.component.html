@@ -1,18 +1,18 @@
 <div class="MainDisplayNotesContainer">
-    <div>
-
-        <div class="NotesContainer" >
-
-            <div class="TitleInput">
-                
+    <div *ngFor="let notes of archiveData">
+        <div class="NotesContainer">
+            
+            <div class="TitleInput" >
+                {{notes.Title}}
             </div>
 
-            <div class="DescriptionInput">
-                
+            <div class="DescriptionInput" >
+                {{notes.description}}
             </div>
+
             <div class="BottomIconsContainer">
-                    <app-notesicon></app-notesicon>
-                </div>
+                <app-notesicon ></app-notesicon>
+            </div>
 
         </div>
     </div>

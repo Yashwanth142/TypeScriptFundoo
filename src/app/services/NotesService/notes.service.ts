@@ -28,7 +28,6 @@ export class NotesService {
    getallNotes()
    {
      this.token= localStorage.getItem("LoginId")
-    console.log(this.token); 
      const httpOptions = {
        headers: new HttpHeaders({
          'Content-Type':  'application/json',
@@ -37,4 +36,15 @@ export class NotesService {
      };
      return this.httpservice.getMethod(this.bUrl+'note', true, httpOptions);
    }
+   UpdateNotes(updata: any) {
+    this.token= localStorage.getItem("LoginId")
+    console.log(updata._id)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'bearer ' +this.token
+      })
+    };
+    return this.httpservice.putMethod(this.bUrl+'note/'+updata._id, updata, true, httpOptions);
+  }
 }

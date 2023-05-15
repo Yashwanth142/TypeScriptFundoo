@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
+import { NotesService } from 'src/app/services/NotesService/notes.service';
 
 @Component({
   selector: 'app-archivenotes',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./archivenotes.component.scss']
 })
 export class ArchivenotesComponent implements OnInit {
-
-  constructor() { }
+  archiveData: any;
+  constructor(private note:NotesService) { }
 
   ngOnInit(): void {
+   
   }
-
+  
+   
 }

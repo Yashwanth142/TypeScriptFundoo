@@ -27,6 +27,8 @@ import { NotesiconComponent } from './components/notesicon/notesicon.component';
 import { ArchivenotesComponent } from './components/archivenotes/archivenotes.component';
 import { TrashnotesComponent } from './components/trashnotes/trashnotes.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
+import { UpdatenoteComponent } from './components/updatenote/updatenote/updatenote.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
     ArchivenotesComponent,
     TrashnotesComponent,
     DisplaynotesComponent,
+    UpdatenoteComponent,
        
   ],
   imports: [
@@ -55,7 +58,7 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
     ReactiveFormsModule,FormsModule,
     HttpClientModule,
     MatToolbarModule,MatSidenavModule,MatSnackBarModule,MatListModule,
-    MatMenuModule,MatNativeDateModule
+    MatMenuModule,MatNativeDateModule,MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,16 +7,22 @@ import { NotesService } from 'src/app/services/NotesService/notes.service';
   styleUrls: ['./getallnote.component.scss']
 })
 export class GetallnoteComponent implements OnInit {
-
+  notesData: any;
   constructor(private note:NotesService) { }
 
   ngOnInit(): void {
-    this.getnotes()
+    this.getNotes()
   }
-  getnotes(){
+  getNotes(){
     this.note.getallNotes().subscribe(
-      (reslove)=>console.log(reslove)
-    )
+      (res:any) => {
+        console.log(res.data);
+        this.notesData=res.data
+        this.notesData=this.notesData.reverse()       
+    })
   }
-
+  receivedMsg(event:any){
+    console.log(event);
+    this.getNotes()
+  }
 }

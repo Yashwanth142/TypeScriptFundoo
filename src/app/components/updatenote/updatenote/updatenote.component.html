@@ -1,0 +1,16 @@
+<div class="MainContainer">
+    <input type="text" matInput [(ngModel)] = "noteTitle" class="TitleIntake">
+
+    <input type="text" matInput [(ngModel)] = "noteDescription" class="DescriptionIntake">
+
+    <div class="BottomIcons">
+
+      <div class="IconsSpaceWidth">
+        <app-notesicon></app-notesicon>
+      </div>
+      <div class="CloseButtonArea">
+        <button mat-flat-button (click)="Dataupdate()">Close</button>
+      </div>
+
+    </div>
+</div>

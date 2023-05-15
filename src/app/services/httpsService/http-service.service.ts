@@ -11,10 +11,13 @@ export class HttpService {
   postMethod(url:string,payload:{},token:boolean=false,httpOptions:any){
     return this.http.post(url,payload,token && httpOptions)
   }
-  putMethod(){
-
+  putMethod(url:string,payload:{},token:boolean=false,httpOptions:any){
+    return this.http.put(url,payload,token && httpOptions)
   }
   getMethod(url:string,token:boolean=false,httpOptions:any){
     return this.http.get(url,token && httpOptions)
+  }
+  deleteMethod(){
+    
   }
 }

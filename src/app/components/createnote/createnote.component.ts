@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotesService } from 'src/app/services/NotesService/notes.service';
-import { UserService } from 'src/app/services/userService/user-service.service';
 
 @Component({
   selector: 'app-createnote',
@@ -12,6 +11,8 @@ import { UserService } from 'src/app/services/userService/user-service.service';
 export class CreatenoteComponent implements OnInit {
   firstView : boolean=true;
   NotesinData!:FormGroup;
+  @Output() message:any=new EventEmitter<any>();
+
   constructor(private formBuilder: FormBuilder , private noteServices: NotesService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -33,11 +34,10 @@ export class CreatenoteComponent implements OnInit {
   
   if(notesData.Title != "" && notesData.description != "")
     {
-      console.log(notesData);
-
       this.noteServices.CreateNotes(notesData).subscribe(
         (response:any) => {
           console.log(response);
+          this.message.emit(response)
           this._snackBar.open("Notes created", "ok", { duration: 3000 });
         },
         (error:any) => {

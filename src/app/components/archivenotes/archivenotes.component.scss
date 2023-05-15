@@ -1,16 +1,10 @@
-MainDisplayNotesContainer
+.MainDisplayNotesContainer
 {
     margin: 0% 5%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     flex-wrap: wrap;
-    // justify-content: center;
-}
-
-.CenterContent
-{
-    display: flex;
     justify-content: center;
 }
 
@@ -42,13 +36,10 @@ MainDisplayNotesContainer
     font-size: 15px;
     word-wrap: break-word;
 }
-
 .BottomIconsContainer
 {
     margin: 10px 0px;
 }
-
-  
 .NotesContainer:hover .BottomIconsContainer
 {
     opacity: 1;

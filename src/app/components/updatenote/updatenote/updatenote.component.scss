@@ -1,0 +1,40 @@
+.MainContainer
+{
+
+    width: 600px;
+    max-height: 750px;
+    border-radius: 20px;
+    padding: 15px 15px 5px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.TitleIntake
+{
+    border: 0px;
+    outline: none;
+    font-size: 20px;
+    margin: 10px 0px;
+}
+
+.DescriptionIntake
+{
+    border: 0px;
+    outline: none;
+    font-size: 15px;
+    margin: 10px 0px;
+    color: rgb(48, 48, 48);
+}
+
+.BottomIcons
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0px;
+}
+
+.IconsSpaceWidth
+{
+    width: 55%;
+}

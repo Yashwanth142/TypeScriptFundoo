@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
+import { NotesService } from 'src/app/services/NotesService/notes.service';
 
 @Component({
   selector: 'app-trashnotes',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trashnotes.component.scss']
 })
 export class TrashnotesComponent implements OnInit {
-
-  constructor() { }
+  trashData: any;
+  constructor(private note:NotesService) { }
 
   ngOnInit(): void {
+   
   }
+ 
 
 }

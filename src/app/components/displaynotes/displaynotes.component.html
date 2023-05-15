@@ -1,13 +1,13 @@
 <div class="MainDisplayNotesContainer">
-    <div>
+    <div *ngFor="let notes of childData">
         <div class="NotesContainer">
             
-            <div class="TitleInput" >
-                
+            <div class="TitleInput" (click)="DialogBox(notes)">
+                {{notes.Title}}
             </div>
 
-            <div class="DescriptionInput" >
-                
+            <div class="DescriptionInput" (click)="DialogBox(notes)">
+                {{notes.description}}
             </div>
 
             <div class="BottomIconsContainer">
