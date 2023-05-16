@@ -23,12 +23,11 @@ export class UpdatenoteComponent implements OnInit {
     if(this.data.title != this.noteTitle || this.data.description != this.noteDescription)
     {
       let updatedData = {
-
         Title: this.noteTitle,
         description: this.noteDescription,
         _id: this.noteId
       }
-      console.log(updatedData);
+      //console.log(updatedData);
 
       this.notesService.UpdateNotes(updatedData).subscribe((res:any) => {console.log("Note updated", res);})   
     }

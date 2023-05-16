@@ -11,7 +11,19 @@ export class TrashnotesComponent implements OnInit {
   constructor(private note:NotesService) { }
 
   ngOnInit(): void {
-   
+   this.trashnotes()
+  }
+  trashnotes(){
+    this.note.getallNotes().subscribe(
+      (res:any) => {
+        console.log(res.data);
+        this.trashData=res.data
+        this.trashData=this.trashData.reverse()
+        this.trashData=this.trashData.filter(function(data:any){
+          return data.archive ===false &&
+                 data.trash === true              
+        })  
+    })
   }
  
 

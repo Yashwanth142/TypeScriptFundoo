@@ -23,3 +23,28 @@
     justify-content: space-between;
     margin: 5px 0px;
 }
+
+::ng-deep .BGColorPallet .mat-mdc-menu-content
+{
+    padding: 6%;
+}
+
+
+.ColorCirclesContainer
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 110px;    
+}
+
+.ColorCircle
+{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}

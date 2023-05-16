@@ -1,5 +1,3 @@
-
-
 mat-toolbar
 {
     background-color: white !important;
@@ -164,13 +162,14 @@ mat-sidenav
 
 .NavItems
 {
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .NavItemsContent
 {
     display: flex;
+    
 }
 
 mat-sidenav :focus

@@ -1,15 +1,117 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { NotesService } from 'src/app/services/NotesService/notes.service';
 
 @Component({
   selector: 'app-notesicon',
   templateUrl: './notesicon.component.html',
   styleUrls: ['./notesicon.component.scss']
 })
-export class NotesiconComponent implements OnInit {
+export class NotesiconComponent  {
 
-  constructor() { }
+  @Input() clickReciever:any;
+ 
 
-  ngOnInit(): void {
+  @Output() ColorEvent = new EventEmitter();
+
+  colorData:any = [
+    {code:'#F38B83'},
+    {code: '#FBBC05'},
+    {code: '#FEF474'},
+    {code: '#CDFF90'},
+    {code: '#A6FEEB'},
+    {code: '#CAF1F8'},
+    {code: '#AECAFB'},
+    {code: '#D7AFFA'},
+    {code: '#FDCFE8'},
+    {code: '#E6C8A9'},
+    {code: '#FFFFFF'}
+  ];
+  constructor(private userServices:NotesService, private _snackBar:MatSnackBar) { }
+ 
+  ColorCodeEmit(colorInfo:any)
+  {
+    this.ColorEvent.emit();
+    
+    console.log(this.clickReciever._id)
+    let data = {
+      color: colorInfo,
+      _id: [this.clickReciever._id]
+    }   
+    this.userServices.ColorChange(data).subscribe((success:any) => {
+      console.log("Success", success);
+      
+    },
+    (error:any) =>
+    {
+      console.log(error);  
+    })
+    window.location.reload();
   }
 
+  Delete()
+  {
+    if(this.clickReciever.trash==false){
+    console.log("in delete",this.clickReciever);
+    
+    let payload = {
+      isDeleted:this.clickReciever.trash,
+      _id:[this.clickReciever._id]
+    }
+
+    this.userServices.AddToTrash(payload).subscribe(
+    (success:any)=>
+    {
+      this._snackBar.open("sent to trash", "ok", { duration: 3000 });
+    })
+  }else{
+    console.log("in delete",this.clickReciever);
+    
+    let payload = {
+      isDeleted:this.clickReciever.trash,
+      _id:[this.clickReciever._id]
+    }
+
+    this.userServices.RemoveToTrash(payload).subscribe(
+    (success:any)=>
+    {
+      this._snackBar.open("sent to trash", "ok", { duration: 3000 });
+    })
+  }
+
+    this.ColorEvent.emit();
+    window.location.reload();
+  }
+
+  Archive()
+  { 
+    if(this.clickReciever.archive==false){
+      console.log("archive true")
+    let data = {
+      isArchive:this.clickReciever.archive,
+      _id:this.clickReciever._id
+    }
+
+    this.userServices.AddToArchive(data).subscribe(
+    (success:any)=>
+    {
+      this._snackBar.open("sent to Archive", "ok", { duration: 3000 });
+    })
+  }else{
+    console.log("archive false")
+    let data = {
+      isArchive:this.clickReciever.archive,
+      _id:this.clickReciever._id
+    }
+
+    this.userServices.RemoveToArchive(data).subscribe(
+    (success:any)=>
+    {
+      this._snackBar.open("remove form Archive", "ok", { duration: 3000 });
+    })
+  }
+
+    this.ColorEvent.emit();
+    window.location.reload();
+  }
 }

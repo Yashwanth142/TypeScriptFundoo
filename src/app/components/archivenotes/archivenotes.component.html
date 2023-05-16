@@ -1,6 +1,6 @@
 <div class="MainDisplayNotesContainer">
     <div *ngFor="let notes of archiveData">
-        <div class="NotesContainer">
+        <div class="NotesContainer" [style.background-color]="notes.color">
             
             <div class="TitleInput" >
                 {{notes.Title}}
@@ -11,7 +11,7 @@
             </div>
 
             <div class="BottomIconsContainer">
-                <app-notesicon ></app-notesicon>
+                <app-notesicon [clickReciever]="notes"></app-notesicon>
             </div>
 
         </div>

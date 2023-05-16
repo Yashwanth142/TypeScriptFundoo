@@ -11,8 +11,20 @@ export class ArchivenotesComponent implements OnInit {
   constructor(private note:NotesService) { }
 
   ngOnInit(): void {
-   
+   this.archivenotes()
   }
-  
-   
+archivenotes()
+{
+  this.note.getallNotes().subscribe(
+    (res:any) => {
+      console.log(res.data);
+      this.archiveData=res.data
+      this.archiveData=this.archiveData.reverse()
+      this.archiveData=this.archiveData.filter(function(data:any){
+        return data.archive ===true &&
+               data.trash === false              
+      })  
+     
+  })
+}   
 }

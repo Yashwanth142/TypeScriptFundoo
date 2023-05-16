@@ -7,6 +7,7 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class NotesService {
+  
   bUrl:string=environment.baseUrl
   token:any;
   constructor(private httpservice:HttpService) {
@@ -38,7 +39,7 @@ export class NotesService {
    }
    UpdateNotes(updata: any) {
     this.token= localStorage.getItem("LoginId")
-    console.log(updata._id)
+    //console.log(updata)
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
@@ -46,5 +47,62 @@ export class NotesService {
       })
     };
     return this.httpservice.putMethod(this.bUrl+'note/'+updata._id, updata, true, httpOptions);
+  }
+  AddToArchive(data:any){
+    this.token= localStorage.getItem("LoginId")
+    console.log(data)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'bearer ' +this.token
+      })
+    };
+    return this.httpservice.putMethod(this.bUrl+'note/'+data._id+'/addArchive',data, true, httpOptions);
+  }
+  RemoveToArchive(data:any){
+    this.token= localStorage.getItem("LoginId")
+    //console.log(data)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'bearer ' +this.token
+      })
+    };
+    return this.httpservice.putMethod(this.bUrl+'note/'+data._id+'/removeArchive',data, true, httpOptions);
+  }
+
+  AddToTrash(data:any){
+    this.token= localStorage.getItem("LoginId")
+    //console.log(data)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'bearer ' +this.token
+      })
+    };
+    return this.httpservice.putMethod(this.bUrl+'note/'+data._id+'/addtrash',data, true, httpOptions);
+  }
+  RemoveToTrash(data:any){
+    this.token= localStorage.getItem("LoginId")
+    //console.log(data)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'bearer ' +this.token
+      })
+    };
+    return this.httpservice.putMethod(this.bUrl+'note/'+data._id+'/removetrash',data, true, httpOptions);
+  }
+
+  ColorChange(colorData:any){
+    this.token= localStorage.getItem("LoginId")
+    //console.log(updata)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'bearer ' +this.token
+      })
+    };
+    return this.httpservice.putMethod(this.bUrl+'note/'+colorData._id+'/updatecolor', colorData, true, httpOptions);
   }
 }

@@ -18,7 +18,11 @@ export class GetallnoteComponent implements OnInit {
       (res:any) => {
         console.log(res.data);
         this.notesData=res.data
-        this.notesData=this.notesData.reverse()       
+        this.notesData=this.notesData.reverse()
+        this.notesData=this.notesData.filter(function(data:any){
+          return data.archive ===false &&
+                 data.trash === false              
+        })  
     })
   }
   receivedMsg(event:any){
