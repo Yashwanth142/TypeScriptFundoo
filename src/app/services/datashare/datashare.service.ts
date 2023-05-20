@@ -8,9 +8,9 @@ export class DatashareService {
 
   constructor() { }
   private data = new BehaviorSubject([]);
-  subPoint = this.data.asObservable();
+  currentdata = this.data.asObservable();
   
-  dataInToUnrelated(payload:any)
+  sendData(payload:any)
   {
     this.data.next(payload);
     // console.log("from data sharer", payload);   

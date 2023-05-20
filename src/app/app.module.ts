@@ -29,7 +29,8 @@ import { TrashnotesComponent } from './components/trashnotes/trashnotes.componen
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 import { UpdatenoteComponent } from './components/updatenote/updatenote/updatenote.component';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import { SearchnotePipe } from './Pipes/pipe.pipe';
+import { AuthServiceService } from './auth-service.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     TrashnotesComponent,
     DisplaynotesComponent,
     UpdatenoteComponent,
-       
+    SearchnotePipe
   ],
   imports: [
     BrowserModule,
@@ -60,7 +61,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatToolbarModule,MatSidenavModule,MatSnackBarModule,MatListModule,
     MatMenuModule,MatNativeDateModule,MatDialogModule
   ],
-  providers: [],
+  providers: [
+    AuthServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,7 +16,7 @@ export class GetallnoteComponent implements OnInit {
   getNotes(){
     this.note.getallNotes().subscribe(
       (res:any) => {
-        console.log(res.data);
+        //console.log(res.data);
         this.notesData=res.data
         this.notesData=this.notesData.reverse()
         this.notesData=this.notesData.filter(function(data:any){

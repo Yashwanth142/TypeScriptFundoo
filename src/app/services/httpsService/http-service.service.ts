@@ -17,7 +17,7 @@ export class HttpService {
   getMethod(url:string,token:boolean=false,httpOptions:any){
     return this.http.get(url,token && httpOptions)
   }
-  deleteMethod(){
-    
+  deleteMethod(url:string,token:boolean=false,httpOptions:any){
+    return this.http.delete(url,token && httpOptions)
   }
 }

@@ -1,12 +1,12 @@
 .MainContainer
 {
-
     width: 600px;
     max-height: 750px;
     border-radius: 20px;
     padding: 15px 15px 5px 15px;
     display: flex;
     flex-direction: column;
+    
 }
 
 .TitleIntake
@@ -37,4 +37,11 @@
 .IconsSpaceWidth
 {
     width: 55%;
+}
+@media only screen and (min-width:768px) and (max-width:1024px)
+{
+    .IconsSpaceWidth
+{
+    width: 30%;
+}
 }

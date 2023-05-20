@@ -93,6 +93,17 @@ export class NotesService {
     };
     return this.httpservice.putMethod(this.bUrl+'note/'+data._id+'/removetrash',data, true, httpOptions);
   }
+  PerDelete(data:any){
+    this.token= localStorage.getItem("LoginId")
+    //console.log(data)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'bearer ' +this.token
+      })
+    };
+    return this.httpservice.deleteMethod(this.bUrl+'note/'+data._id, true, httpOptions);
+  }
 
   ColorChange(colorData:any){
     this.token= localStorage.getItem("LoginId")

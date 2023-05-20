@@ -1,12 +1,13 @@
-<div class="MainContainer">
-    <input type="text" matInput [(ngModel)] = "noteTitle" class="TitleIntake">
 
-    <input type="text" matInput [(ngModel)] = "noteDescription" class="DescriptionIntake">
+<div class="MainContainer" [style.background-color]= "noteColor">
+    <input type="text" matInput [(ngModel)] = "noteTitle" class="TitleIntake" [style.background-color]= "noteColor">
+
+    <input type="text" matInput [(ngModel)] = "noteDescription" class="DescriptionIntake" [style.background-color]= "noteColor">
 
     <div class="BottomIcons">
 
       <div class="IconsSpaceWidth">
-        <app-notesicon></app-notesicon>
+        <app-notesicon (ColorEvent)="receivedcolor($event)"></app-notesicon>
       </div>
       <div class="CloseButtonArea">
         <button mat-flat-button (click)="Dataupdate()">Close</button>

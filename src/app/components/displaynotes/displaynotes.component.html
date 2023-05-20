@@ -1,5 +1,5 @@
 <div class="MainDisplayNotesContainer">
-    <div *ngFor="let notes of childData">
+    <div *ngFor="let notes of childData | searchnote: searchText">
         <div class="NotesContainer" [style.background-color]="notes.color">
             
             <div class="TitleInput" (click)="DialogBox(notes)">
@@ -11,7 +11,7 @@
             </div>
 
             <div class="BottomIconsContainer">
-                <app-notesicon [clickReciever]="notes"></app-notesicon>
+                <app-notesicon [clickReciever]="notes" (ColorEvent)="received($event)"></app-notesicon>
             </div>
 
         </div>

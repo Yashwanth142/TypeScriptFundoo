@@ -11,7 +11,7 @@
           <div class="SearchBar">
             <!-- <button mat-icon-button><mat-icon>search</mat-icon></button> -->
             <img src="../../../assets/search.svg" alt="Searchi" class="MainIcons SearchIcon" >
-            <input type="text" placeholder="Search" class="SearchArea" >
+            <input type="text" placeholder="Search" class="SearchArea" (keyup)="searchNote($event)">
           </div>
         </div>
   

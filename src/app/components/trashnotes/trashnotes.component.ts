@@ -1,5 +1,6 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component,Output, OnInit,EventEmitter } from '@angular/core';
 import { NotesService } from 'src/app/services/NotesService/notes.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-trashnotes',
@@ -8,7 +9,7 @@ import { NotesService } from 'src/app/services/NotesService/notes.service';
 })
 export class TrashnotesComponent implements OnInit {
   trashData: any;
-  constructor(private note:NotesService) { }
+  constructor(private note:NotesService,private _snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
    this.trashnotes()
@@ -26,5 +27,4 @@ export class TrashnotesComponent implements OnInit {
     })
   }
  
-
 }

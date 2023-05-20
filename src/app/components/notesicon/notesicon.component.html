@@ -1,6 +1,6 @@
 <div class="BottomIcons">
 
-    <div class="LeftIcons">
+    <div class="LeftIcons" *ngIf="!trash">
           <img src="../../../assets/notifications_.svg" alt="Remind me" class="DownIcons">
           <img src="../../../assets/person_add.svg" alt="Collaborator" class="DownIcons">
           <img src="../../../assets/palette.svg" alt="Background options" class="DownIcons"  [matMenuTriggerFor]="colorMenu">
@@ -8,6 +8,10 @@
           <img src="../../../assets/archive_.svg" alt="Archive" class="DownIcons" (click)="Archive()">
           <img src="../../../assets/more_vert.svg" alt="More" class="DownIcons" [matMenuTriggerFor]="menu">
     </div>
+    <div class="BottomIconsContainer" *ngIf="trash">
+      <img src="../../../assets/restore_from_trash.svg" alt="Restore" class="TrashIconos" (click)="Delete()">
+      <img src="../../../assets/delete_forever.svg" alt="Delete Forever" class="TrashIconos" (click)="DeleteForever()">
+  </div>
     <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="Delete()">Delete note</button>
         <button mat-menu-item>Add Label</button>

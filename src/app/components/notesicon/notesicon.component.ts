@@ -7,13 +7,11 @@ import { NotesService } from 'src/app/services/NotesService/notes.service';
   templateUrl: './notesicon.component.html',
   styleUrls: ['./notesicon.component.scss']
 })
-export class NotesiconComponent  {
-
+export class NotesiconComponent  implements OnInit{
+trash:any;
   @Input() clickReciever:any;
- 
-
   @Output() ColorEvent = new EventEmitter();
-
+  
   colorData:any = [
     {code:'#F38B83'},
     {code: '#FBBC05'},
@@ -25,14 +23,19 @@ export class NotesiconComponent  {
     {code: '#D7AFFA'},
     {code: '#FDCFE8'},
     {code: '#E6C8A9'},
-    {code: '#FFFFFF'}
+    {code: '#FFFFFF'},
+    {code: '#E9EBED'}
   ];
-  constructor(private userServices:NotesService, private _snackBar:MatSnackBar) { }
+  constructor(private userServices:NotesService, private _snackBar:MatSnackBar) {
+    
+   }
+   ngOnInit(): void {
+    this.trash=this.clickReciever.trash;
+  }
  
   ColorCodeEmit(colorInfo:any)
   {
-    this.ColorEvent.emit();
-    
+    this.ColorEvent.emit(colorInfo);
     console.log(this.clickReciever._id)
     let data = {
       color: colorInfo,
@@ -75,11 +78,30 @@ export class NotesiconComponent  {
     this.userServices.RemoveToTrash(payload).subscribe(
     (success:any)=>
     {
-      this._snackBar.open("sent to trash", "ok", { duration: 3000 });
+      this._snackBar.open("restore form trash", "ok", { duration: 3000 });
     })
   }
 
     this.ColorEvent.emit();
+    window.location.reload();
+  }
+  DeleteForever()
+  {
+    console.log(this.clickReciever.trash)
+    let payload = {
+      isDeleted:false,
+      _id:[this.clickReciever._id]
+    }
+    this.userServices.PerDelete(payload).subscribe((suc:any) => {
+      console.log("Delete forever succeded", suc);    
+      this._snackBar.open("Delete forever form trash", "ok", { duration: 3000 });
+      
+    },  
+    (error:any) =>
+    {
+      console.log("There has been an error", error);  
+    }
+    );
     window.location.reload();
   }
 
@@ -114,4 +136,7 @@ export class NotesiconComponent  {
     this.ColorEvent.emit();
     window.location.reload();
   }
+
+ 
+  
 }
