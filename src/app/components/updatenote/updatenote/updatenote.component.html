@@ -9,8 +9,8 @@
       <div class="IconsSpaceWidth">
         <app-notesicon (ColorEvent)="receivedcolor($event)"></app-notesicon>
       </div>
-      <div class="CloseButtonArea">
-        <button mat-flat-button (click)="Dataupdate()">Close</button>
+      <div class="CloseButtonArea" >
+        <button mat-flat-button (click)="Dataupdate()" [style.background-color]= "noteColor">Close</button>
       </div>
 
     </div>
